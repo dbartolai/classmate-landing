@@ -1,0 +1,163 @@
+:root {
+  /* Primary Palette - Your Beautiful Teals */
+  --color-primary-50: #f0fdfe;
+  --color-primary-100: #ccf7fe; 
+  --color-primary-200: #99eefd;
+  --color-primary-300: #66f6fb;
+  --color-primary-400: #25d0d3;
+  --color-primary-500: #1b9aaa;  /* Your main brand color */
+  --color-primary-600: #157a8c;  /* Your hover color */
+  --color-primary-700: #126776;  /* Your active color */
+  --color-primary-800: #0f5560;
+  --color-primary-900: #0c444a;
+
+  /* Secondary Palette - Your Beautiful Orange/Coral */
+  --color-secondary-50: #fef7f4;
+  --color-secondary-100: #ffe6e1;  /* Your light orange bg */
+  --color-secondary-200: #ffd1c2;  /* Your button gradient */
+  --color-secondary-300: #ffb8a3;
+  --color-secondary-400: #f0956f;
+  --color-secondary-500: #e07a5f;  /* Your main orange */
+  --color-secondary-600: #b75539;  /* Your orange hover */
+  --color-secondary-700: #a0472e;
+  --color-secondary-800: #893a24;
+  --color-secondary-900: #72301b;
+
+  /* Background Gradients - Your Signature Look */
+  --bg-gradient-primary: linear-gradient(135deg, #f8ffe5, #e3f6f5, #d4f1f4, #e3f6f5);
+  --bg-gradient-teal: linear-gradient(135deg, #1b9aaa 0%, #157a8c 100%);
+  --bg-gradient-orange: linear-gradient(135deg, #ffe6e1 0%, #ffd1c2 100%);
+  --bg-gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  --bg-gradient-card: rgba(255, 255, 255, 0.95);
+
+  --color-bg-dark: #0d1117; /* dark canvas */
+  --color-bg-card: rgba(13, 17, 23, 0.8); /* translucent card */
+  --color-text-light: #e6edf3; /* primary text on dark */
+  --color-text-muted: #8b949e; /* secondary text */
+  --shadow-glow: 0 0 10px rgba(27, 154, 170, 0.4); /* teal glow */
+  --border-gradient: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-600));
+
+
+  /* Glassmorphism Effects - Your Card Style */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(27, 154, 170, 0.15), 0 2px 16px 0 rgba(0, 0, 0, 0.05);
+  --glass-backdrop: blur(10px);
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;  /* Your text gray */
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;  /* Your label color */
+  --color-gray-800: #1f2937;  /* Your input text */
+  --color-gray-900: #111827;
+
+  /* Status Colors - Red */
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+
+  /* Status Colors - Orange */
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+
+  /* Status Colors - Green */
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+
+  /* Semantic Colors */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: var(--color-primary-500);
+
+  /* Typography - Matches Your Current Styles */
+  --font-family-sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+  
+  /* Font Sizes - Based on Your Current Usage */
+  --text-xs: 0.8rem;    /* Helper text */
+  --text-sm: 0.9rem;    /* Labels, small text */
+  --text-base: 1rem;    /* Inputs, body text */
+  --text-lg: 1.1rem;    /* Buttons */
+  --text-xl: 1.25rem;   
+  --text-2xl: 2.2rem;   /* Your titles */
+
+  /* Spacing - Based on Your Current Patterns */
+  --space-1: 0.25rem;   
+  --space-2: 0.5rem;    /* Your gaps */
+  --space-3: 0.75rem;   
+  --space-4: 1rem;      
+  --space-5: 1.2rem;    /* Your form gaps */
+  --space-6: 1.5rem;    
+  --space-8: 2rem;      
+  --space-10: 2.5rem;   /* Your card padding */
+  --space-12: 3rem;     /* Your large padding */
+
+  /* Border Radius - Your Rounded Style */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 12px;    /* Your input/button radius */
+  --radius-xl: 22px;    /* Your option buttons */
+  --radius-2xl: 24px;   /* Your card radius */
+
+  /* Shadows - Your Existing Effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px 0 rgba(224, 122, 95, 0.25);  /* Your orange shadow */
+  --shadow-lg: 0 4px 20px 0 rgba(27, 154, 170, 0.25);  /* Your teal shadow */
+  --shadow-xl: 0 8px 25px 0 rgba(27, 154, 170, 0.35);  /* Your hover shadow */
+
+  /* Transitions - Your Smooth Animations */
+  --transition-fast: 0.13s ease;        /* Your quick transforms */
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);  /* Your main transition */
+  --transition-slow: 0.6s ease;         /* Your shimmer effects */
+
+  /* Animation Timing */
+  --animation-slideUp: slideUp 0.6s ease-out;
+  --animation-gradientShift: gradientShift 12s ease-in-out infinite;
+}
+
+/* Your Signature Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
