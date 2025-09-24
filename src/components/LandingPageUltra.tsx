@@ -41,7 +41,7 @@ const LandingPageUltra = () => {
             </div>
 
             <div className="visual-card secondary-card">
-              <span className="visual-label">Proviciency Level</span>
+              <span className="visual-label">Proficiency Level</span>
               <strong className="visual-value">Stoichiometry: 8.34/10</strong>
               <span className="visual-pill">22% Increase</span>
             </div>
