@@ -29,7 +29,9 @@ async function connectIfNeeded() {
 export async function addEmail(email: string) {
   await connectIfNeeded();
   // Use a Set to avoid duplicates
+  console.log ("trying to upload")
   await client.sAdd("waiting_list", email);
+  console.log("upload complete")
 }
 
 export async function getAllEmails(): Promise<string[]> {
