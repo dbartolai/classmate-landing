@@ -1,23 +1,14 @@
-// lib/redis.ts
-import { createClient, RedisClientType } from "redis";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { createClient } from "redis";
 
-const redisUrl = process.env.REDIS_URL!;
-if (!redisUrl) {
-  throw new Error("REDIS_URL is not defined");
-}
-
-// Some Redis clients require TLS configuration for cloud Redis
-const client: RedisClientType = createClient({
-  url: redisUrl,
+const client = createClient({
+  url: process.env.REDIS_URL!,
   socket: {
-    // If your provider needs TLS (Upstash etc), set this
-    tls: true,
+    tls: true, // required for Upstash/Redis Cloud
   },
 });
 
-client.on("error", (err) => {
-  console.error("Redis Client Error", err);
-});
+client.on("error", (err) => console.error("Redis Client Error", err));
 
 async function connectIfNeeded() {
   if (!client.isOpen) {
@@ -25,23 +16,24 @@ async function connectIfNeeded() {
   }
 }
 
-// Export functions for your operations
-export async function addEmail(email: string) {
-  await connectIfNeeded();
-  // Use a Set to avoid duplicates
-  console.log ("trying to upload")
-  await client.sAdd("waiting_list", email);
-  console.log("upload complete")
-}
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method === "POST") {
+    const { email } = req.body;
 
-export async function getAllEmails(): Promise<string[]> {
-  await connectIfNeeded();
-  const members = await client.sMembers("waiting_list");
-  return members;
-}
+    if (!email || !email.includes("@")) {
+      return res.status(400).json({ error: "Invalid email" });
+    }
 
-export async function closeRedis() {
-  if (client.isOpen) {
-    await client.disconnect();
+    try {
+      await connectIfNeeded();
+      await client.sAdd("waiting_list", email.trim());
+      return res.status(200).json({ success: true });
+    } catch (err) {
+      console.error("Redis error:", err);
+      return res.status(500).json({ error: "Internal error" });
+    }
   }
+
+  res.setHeader("Allow", ["POST"]);
+  return res.status(405).end(`Method ${req.method} Not Allowed`);
 }
