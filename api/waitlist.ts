@@ -3,9 +3,6 @@ import { createClient } from "redis";
 
 const client = createClient({
   url: process.env.EMAIL_REDIS_URL!,
-  socket: {
-    tls: true, // required for Upstash/Redis Cloud
-  },
 });
 
 client.on("error", (err) => console.error("Redis Client Error", err));
