@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "redis";
 
 const client = createClient({
-  url: process.env.REDIS_URL!,
+  url: process.env.EMAIL_REDIS_URL!,
   socket: {
     tls: true, // required for Upstash/Redis Cloud
   },
