@@ -70,7 +70,6 @@ const WaitlistForm: React.FC = () => {
         </form>
       ) : (
         <div className="form-success">
-          <div className="success-icon">🎉</div>
           <p className="success-message">
             Thanks for joining the waitlist!
           </p>
